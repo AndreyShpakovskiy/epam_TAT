@@ -37,68 +37,25 @@ public class AirportTest {
     public void testGetTransportMilitaryPlanes() {
         Airport airport = new Airport(planes);
         List<MilitaryPlane> transportMilitaryPlanes = airport.getTransportMilitaryPlanes();
-        boolean flag = false;
-        for (MilitaryPlane militaryPlane : transportMilitaryPlanes) {
-            if ((militaryPlane.getType() == MilitaryPlaneType.TRANSPORT)) {
-                flag = true;
-                break;
-            }
-        }
-        Assert.assertTrue(flag);
+        Assert.assertTrue(transportMilitaryPlanes.stream().anyMatch(plane -> plane.getType() == MilitaryPlaneType.TRANSPORT));
     }
 
     @Test
     public void testGetPassengerPlaneWithMaxCapacity() {
-        System.out.println("TEST testGetPassengerPlaneWithMaxCapacity started!");
         Airport airport = new Airport(planes);
-        PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
-        Assert.assertEquals(planeWithMaxPassengerCapacity, expectedPlaneWithMaxPassengersCapacity);
+        Assert.assertEquals(planeWithMaxPassengerCapacity, airport.getPassengerPlaneWithMaxPassengersCapacity());
     }
 
     @Test
-    public void test3() {
-        Airport airport = new Airport(planes);
-        airport.sortByMaxLoadCapacity();
-        List<? extends Plane> planesSortedByMaxLoadCapacity = airport.getPlanes();
-
-        boolean nextPlaneMaxLoadCapacityIsHigherThanCurrent = true;
-        for (int i = 0; i < planesSortedByMaxLoadCapacity.size() - 1; i++) {
-            Plane currentPlane = planesSortedByMaxLoadCapacity.get(i);
-            Plane nextPlane = planesSortedByMaxLoadCapacity.get(i + 1);
-            if (currentPlane.getMaxLoadCapacity() > nextPlane.getMaxLoadCapacity()) {
-                nextPlaneMaxLoadCapacityIsHigherThanCurrent = false;
-                break;
-            }
-        }
-        Assert.assertTrue(nextPlaneMaxLoadCapacityIsHigherThanCurrent);
+    public void testAtLeastOneBomberInMilitaryPlanes() {
+        Assert.assertTrue(new Airport(planes).getBomberMilitaryPlanes().stream().anyMatch(militaryPlane -> militaryPlane.getType() == MilitaryPlaneType.BOMBER));
     }
 
     @Test
-    public void testHasAtLeastOneBomberInMilitaryPlanes() {
-        Airport airport = new Airport(planes);
-        List<MilitaryPlane> bomberMilitaryPlanes = airport.getBomberMilitaryPlanes();
-        boolean flag = false;
-        for (MilitaryPlane militaryPlane : bomberMilitaryPlanes) {
-            if ((militaryPlane.getType() == MilitaryPlaneType.BOMBER)) {
-                flag = true;
-            }
-            else {
-                Assert.fail("Test failed!");
-            }
-        }
-    }
-
-    @Test
-    public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified(){
+    public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified() {
         Airport airport = new Airport(planes);
         List<ExperimentalPlane> experimentalPlanes = airport.getExperimentalPlanes();
-        boolean hasUnclassifiedPlanes = false;
-        for(ExperimentalPlane experimentalPlane : experimentalPlanes){
-            if(experimentalPlane.getClassificationLevel() == ExperimentalPlaneClassificationLevel.UNCLASSIFIED){
-                hasUnclassifiedPlanes = true;
-                break;
-            }
-        }
-        Assert.assertFalse(hasUnclassifiedPlanes);
+
+        Assert.assertTrue(experimentalPlanes.stream().noneMatch(plane -> plane.getClassificationLevel() == ExperimentalPlaneClassificationLevel.UNCLASSIFIED));
     }
 }

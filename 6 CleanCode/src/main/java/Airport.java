@@ -43,27 +43,21 @@ public class Airport {
         }
         return planeWithMaxCapacity;
     }
-
-    public List<MilitaryPlane> getTransportMilitaryPlanes() {
-    List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
-    List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
-        for (MilitaryPlane plane : militaryPlanes) {
-            if (plane.getType() == MilitaryPlaneType.TRANSPORT) {
-                transportMilitaryPlanes.add(plane);
+    private List<MilitaryPlane> getMilitaryPlanesByType(MilitaryPlaneType type) {
+        List<MilitaryPlane> militaryPlanes = new ArrayList<>();
+        for (MilitaryPlane plane : getMilitaryPlanes()) {
+            if (plane.getType() == type) {
+                militaryPlanes.add(plane);
             }
         }
-    return transportMilitaryPlanes;
+        return militaryPlanes;
+    }
+    public List<MilitaryPlane> getTransportMilitaryPlanes() {
+        return getMilitaryPlanesByType(MilitaryPlaneType.TRANSPORT);
     }
 
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
-        List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
-        List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
-        for (MilitaryPlane plane : militaryPlanes) {
-            if (plane.getType() == MilitaryPlaneType.BOMBER) {
-                bomberMilitaryPlanes.add(plane);
-            }
-        }
-        return bomberMilitaryPlanes;
+        return getMilitaryPlanesByType(MilitaryPlaneType.BOMBER);
 
     }
 
