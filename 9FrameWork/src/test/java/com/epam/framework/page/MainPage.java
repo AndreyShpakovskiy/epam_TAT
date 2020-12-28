@@ -1,4 +1,4 @@
-package com.epam.ta.page;
+package com.epam.framework.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

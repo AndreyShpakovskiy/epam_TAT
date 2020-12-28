@@ -1,8 +1,8 @@
-package com.epam.ta.test;
+package com.epam.framework.test;
 
-import com.epam.ta.page.CartPage;
-import com.epam.ta.page.ComparisonPage;
-import com.epam.ta.page.ProductPage;
+import com.epam.framework.page.CartPage;
+import com.epam.framework.page.ComparisonPage;
+import com.epam.framework.page.ProductPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

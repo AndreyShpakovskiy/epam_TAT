@@ -1,6 +1,6 @@
-package com.epam.ta.page;
+package com.epam.framework.page;
 
-import com.epam.ta.model.User;
+import com.epam.framework.model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;

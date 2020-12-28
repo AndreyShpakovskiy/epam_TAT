@@ -1,4 +1,4 @@
-package com.epam.ta.page;
+package com.epam.framework.page;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,8 +1,8 @@
-package com.epam.ta.test;
+package com.epam.framework.test;
 
-import com.epam.ta.model.User;
-import com.epam.ta.page.LoginPage;
-import com.epam.ta.service.UserCreator;
+import com.epam.framework.model.User;
+import com.epam.framework.page.LoginPage;
+import com.epam.framework.service.UserCreator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

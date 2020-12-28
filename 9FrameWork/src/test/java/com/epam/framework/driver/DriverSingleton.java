@@ -1,4 +1,4 @@
-package com.epam.ta.driver;
+package com.epam.framework.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package com.epam.ta.model;
+package com.epam.framework.model;
 
 import java.util.Objects;
 

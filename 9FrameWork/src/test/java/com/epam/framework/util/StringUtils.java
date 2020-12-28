@@ -1,4 +1,4 @@
-package com.epam.ta.util;
+package com.epam.framework.util;
 
 import java.util.Random;
 

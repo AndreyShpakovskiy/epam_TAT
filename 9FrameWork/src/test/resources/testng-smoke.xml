@@ -3,7 +3,7 @@
 <suite name="Smoke" verbose="1" >
     <test name="NonExistingElementSearch"   >
         <classes>
-            <class name="com.epam.tat.test.SearchTest" />
+            <class name="com.epam.framework.test.SearchTest" />
         </classes>
     </test>
 </suite>

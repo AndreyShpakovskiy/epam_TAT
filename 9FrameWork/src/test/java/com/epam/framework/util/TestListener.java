@@ -1,6 +1,6 @@
-package com.epam.ta.util;
+package com.epam.framework.util;
 
-import com.epam.ta.driver.DriverSingleton;
+import com.epam.framework.driver.DriverSingleton;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

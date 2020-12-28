@@ -1,7 +1,7 @@
-package com.epam.ta.test;
+package com.epam.framework.test;
 
-import com.epam.ta.page.MainPage;
-import com.epam.ta.service.TestDataReader;
+import com.epam.framework.page.MainPage;
+import com.epam.framework.service.TestDataReader;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
