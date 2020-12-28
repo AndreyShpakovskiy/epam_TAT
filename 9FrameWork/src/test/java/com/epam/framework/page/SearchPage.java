@@ -34,7 +34,7 @@ public class SearchPage  extends AbstractPage{
     @Override
     protected SearchPage openPage() {
         driver.navigate().to(TestDataReader.getTestData(BASE_URL));
-        logger.info("Product page opened");
+        logger.info("Search page opened");
         return this;
     }
 }

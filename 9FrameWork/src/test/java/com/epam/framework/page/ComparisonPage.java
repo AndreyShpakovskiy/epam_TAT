@@ -37,7 +37,7 @@ public class ComparisonPage extends AbstractPage{
     @Override
     public ComparisonPage openPage() {
         driver.navigate().to(COMPARISON_URL);
-        logger.info("Cart page opened");
+        logger.info("Comparison page opened");
         return this;
     }
 }
